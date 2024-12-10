@@ -17,7 +17,7 @@ def waveform_to_frames(waveform, frame_length, step):
        frames[n,t] = waveform[t*step+n]
     '''
     #raise RuntimeError("You need to change this part")
-    num_frames = int((len(speech) - frame_length) / step)
+    num_frames = int((len(waveform) - frame_length) / step)
     frames = np.zeros((frame_length, num_frames))
     for frame in np.arange(num_frames):
         frames[:, frame] = waveform[frame * step : frame * step + frame_length]
